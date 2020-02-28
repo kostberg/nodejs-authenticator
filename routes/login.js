@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
 router.get('/', (req, res) => {
-    res.send('Working')
+    res.send('Api is live, make a post request')
 })
 
 router.post('/', (req, res) => {

@@ -1,12 +1,11 @@
 const User = require('./models/User.model.js')
 const mongoose = require('mongoose')
 
-const insertUser = async (params) => {
-    const { username, email, password } = params
+const insertUser = async (username, email, passwordHash) => {
     const user = new User({
         username,
         email,
-        passwordHash: password
+        passwordHash
     });
     await user.save()
 }
