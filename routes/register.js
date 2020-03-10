@@ -46,8 +46,7 @@ router.post('/', async (req, res) => {
 
     // Insert validated user
     await insertUser(username, email, passwordHash).catch(err => console.log(err))
-    const getUsers = await users.find({}).catch(err => console.log(err))
-    res.send(getUsers)
+    res.status(200).json({ error: null })
 })
 
 module.exports = router
